@@ -1,0 +1,104 @@
+
+--Performming the Assignment operator and GST also---
+
+
+import java.util.Scanner;
+
+public class Calculator {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+        int num1,num2;
+		
+
+         int result;
+        int operator;
+		System.out.println("Choose an Operator: +,-,*,/,%,G");
+		 operator = scan.next().charAt(0);
+		
+		
+		switch(operator)
+		{
+		case '+':
+			System.out.println("Enter First Number :");
+		 num1 = scan.nextInt();
+
+			System.out.println("Enter Second Number :");
+			num2 = scan.nextInt();
+
+			result = num1+num2;
+			System.out.println(num1+"+"+num2 +"="+result);
+			break;
+		case '-':
+			System.out.println("Enter First Number :");
+			 num1 = scan.nextInt();
+
+			System.out.println("Enter Second Number :");
+			 num2 = scan.nextInt();
+			result = num1-num2;
+			System.out.println(num1+"-"+num2 +"="+result);
+			break;
+		case '*':
+			System.out.println("Enter First Number :");
+			 num1 = scan.nextInt();
+
+			System.out.println("Enter Second Number :");
+			 num2 = scan.nextInt();
+			result = num1*num2;
+			System.out.println(num1+"*"+num2 +"="+result);
+			break;
+		case '/':
+			System.out.println("Enter First Number :");
+			 num1 = scan.nextInt();
+
+			System.out.println("Enter Second Number :");
+			 num2 = scan.nextInt();
+			result = num1/num2;
+			System.out.println(num1+"/"+num2 +"="+result);
+			break;
+		case '%':
+			System.out.println("Enter First Number :");
+			num1 = scan.nextInt();
+
+			System.out.println("Enter Second Number :");
+			 num2 = scan.nextInt();
+			result = num1%num2;
+			System.out.println(num1+"%"+num2 +"="+result);
+			break;
+		case 'G':
+			System.out.println("Enter the amount");
+			double amount=scan.nextDouble();
+			double gst=(amount/100)*18;
+			double total_amount=gst+amount;
+			System.out.println("GST is:"+gst);
+			System.out.println("Total amount is:"+ total_amount);
+			break;
+			default:System.out.println("please enter the valid operator");
+		}
+
+	}
+
+}
+
+
+
+-----ComplementOper--------
+
+
+
+public class ComplementOper
+{
+	
+	public static void main(String[] args)
+	{
+		
+		int x = 10;
+		int y = -12;
+		System.out.println(~x);
+		System.out.println(~~x);
+		System.out.println(~~y);
+		
+	}
+
+}
+
