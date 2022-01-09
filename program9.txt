@@ -1,0 +1,102 @@
+
+---Hierarical Inheritence---
+
+class A
+{
+	void property()
+	{
+		System.out.println("money");
+	}
+}
+
+class B extends A
+{
+	void access()
+	{
+		System.out.println("Access the property");
+	}
+}
+class C extends A
+{
+	void access()
+	{
+		System.out.println("Access the property");
+	}
+}
+class D extends A
+{
+	void access()
+	{
+		System.out.println("Access the property");
+	}
+}
+
+public class HierarchicalInhe 
+{
+public static void main(String[] args)
+{
+	B b = new B();
+	C c = new C();
+	D d = new D();
+	
+	b.property();
+	b.access();
+	c.property();
+	d.property();
+}
+}
+
+
+----Multi-level inheritence---
+
+
+
+
+
+
+
+public class Whatsapp 
+{
+public void text()
+{
+	System.out.println("Msg sent..!");
+}
+}
+
+public class MessageRecived extends Whatsapp
+{
+public void textrecived()
+{
+	System.out.println("Text Recived..!");
+}
+}
+
+
+public class MessageRead extends MessageRecived {
+	public void MsgRead() 
+	{
+		System.out.println("Message Reader");
+	}
+
+		
+	}
+
+
+
+public class User 
+{
+public static void main(String[] args)
+{
+	MessageRead mr = new MessageRead();
+	mr.text();
+	mr.textrecived();
+	mr.MsgRead();
+	System.out.println("=======");
+	MessageRecived mr1 = new MessageRecived();
+	mr1.text();
+	mr1.textrecived();
+	
+}
+}
+
+
