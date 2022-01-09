@@ -1,0 +1,108 @@
+
+
+     Array Implementation
+	 ====================
+
+package com.te.arraylistimpl;
+
+import java.util.Iterator;
+
+public class MyArrayList {
+	Object[] array;
+	int position;
+
+	public MyArrayList(int size) {
+		array = new Object[size];
+	}
+
+	public void add(Object obj) {
+		if (position >= array.length) {
+			increaseCapacity();
+		}
+		array[position] = obj;
+		position++;
+
+	}
+
+	private void increaseCapacity() {
+		Object[] temp = new Object[array.length + 3];
+		for (int i = 0; i < array.length; i++) {
+			temp[i] = array[i];
+		}
+		array = temp;
+	}
+
+	public Iterator iterator() {
+		return new MyItr();
+	}
+
+	public Object get(int index) {
+		return array[index];
+	}
+
+	public void remove(int index) {
+		for (int i = index; i < position; i++) {
+			array[i] = array[i + 1];
+		}
+		position--;
+	}
+
+	@Override
+	public String toString() {
+		String s = "[" + array[0];
+		for (int i = 1; i < position; i++) {
+			s += "," + array[i];
+		}
+		s += "]";
+		return s;
+	}
+
+	private class MyItr implements Iterator {
+		int index;
+
+		@Override
+		public boolean hasNext() {
+			return (index < position) ? true : false;
+		}
+
+		@Override
+		public Object next() {
+			return array[index++];
+		}
+
+	}
+
+}
+
+            CODE CHECKING
+			=============
+			
+			
+package com.te.arraylistimpl;
+
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+
+public class main {
+	public static void main(String[] args) {
+		MyArrayList list = new MyArrayList(2);
+	    list.add(10);	
+	    list.add(20);
+	    list.add(30);
+	    list.add(40);
+	    list.add(50);
+	    list.add(60);
+	    list.remove(1);
+	   
+	    System.out.println(list.get(4));
+	    System.out.println(list);
+	    Iterator iterator = list.iterator();
+	    while(iterator.hasNext()) {
+	    	System.out.println(iterator.next());
+	    }
+	    System.out.print(list);
+	    
+	}
+
+}
