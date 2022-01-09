@@ -1,0 +1,46 @@
+
+
+
+----Interface Program----
+
+
+
+
+public interface A 
+{
+ abstract void money();
+
+}
+
+
+public interface B 
+{
+	void money();
+	public default void method1() {
+		System.out.println("HHii");
+	}
+}
+
+
+
+public class Sandeep implements A, B {
+
+	@Override
+	public void money()
+	{
+      System.out.println("Accessing Available..!");
+	}
+
+}
+
+public class Access {
+	public static void main(String[] args) {
+		Sandeep s = new Sandeep();// up-casting
+		s.money();
+		A a = new Sandeep();// Up-casting
+		s.money();
+		Sandeep w = (Sandeep) a; // down casting
+		w.money();
+		s.method1();
+	}
+}
