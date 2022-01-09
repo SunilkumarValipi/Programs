@@ -1,0 +1,142 @@
+
+=====================
+
+public class First
+{
+public static void main(String[] args)
+{
+ int x = 5;
+ int y = 6;
+ 
+ System.out.println(x++>y | ++x<y);
+ System.out.println(x);
+ System.out.println(x<<3);
+ System.out.println(y>>1);
+}
+}
+
+================================
+
+public class forLoop
+{
+	public static void main(String[] args) 
+	{
+int x = 30;
+
+ int y = 20;
+while(x>y) {
+System.out.println("t");
+}
+System.out.println("s");
+}
+=================================
+
+
+public class forTask 
+{
+	public static void main(String[] args) 
+	{
+		int i=1;
+		for(System.out.println("Hii");i<5;System.out.println("Sandeep")) 
+		{
+			System.out.println("Suneel");
+			i++;
+			
+		}
+		
+
+	}
+
+}
+
+=====================================
+
+
+public class methodOverL
+{
+	public void login(String name,String password)
+	{
+		System.out.println("your username:"+name);
+		System.out.println("your password:"+password);
+	}
+	public void login(long phonenumber, int otp)
+	{
+		System.out.println("your phonenumber:"+phonenumber);
+		System.out.println("your otp:"+otp);
+	}
+
+public static void main(String[] args)
+{
+	methodOverL m = new methodOverL();
+	m.login("Sandeep", "sB@1907");
+	m.login(9177951840l, 190724);
+}
+}
+======================================
+
+
+public class methodOverL1                 
+{
+	static public void add(int x, int y)
+	{
+		System.out.println(x+y);   
+	}
+	static public void add(int x, int y, int z)
+	{
+		System.out.println(x+y+z);
+	}
+
+public static void main(String[] args)
+{
+	//methodOverL1 m = new methodOverL1();
+add(8,7);
+add(8,7,2);
+}
+}
+
+==========================================
+
+
+public class revWord {
+	public static void main(String[] args) {
+		String str = "my name is Sandeep";
+		String rev = "";
+		String[] array = str.split(" ");
+		String word = "";
+		
+		for(int i=0; i<array.length;i++) {
+			word = array[i];
+			for(int j = word.length()-1; i>=0; i--) {
+				rev = rev + word.charAt(j);
+			}
+			rev= rev+" ";
+		}
+		System.out.println(rev);
+	}
+
+}
+=============================================
+
+import java.util.Scanner;
+public class Tables 
+{
+public static void main(String[] args) 
+{
+	
+	//Scanner sc = new Scanner(System.in);
+	
+	//int i=2;
+	int sum = 0;
+	int j=2;
+	//int result = i*j;
+	for(int i = 1;i<=10; i++ ) {
+		int result = i*j;
+
+	System.out.println(j+ "*" +i+ "=" +(result));
+	sum =sum+j*i;
+	}
+	System.out.println(sum);
+}
+}
+
+
