@@ -1,0 +1,136 @@
+
+
+----Month and Days program-----
+
+import java.util.Scanner;
+
+public class Claculate {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+
+		System.out.println("Enter month number:");
+		int month = scan.nextInt();
+		System.out.println("Enter year:");
+		int year = scan.nextInt();
+
+		String MonthName = "";
+		int DaysInMonth = 0;
+
+		switch (month) {
+		case 1:
+			MonthName = "January";
+			DaysInMonth = 31;
+			break;
+		case 2:
+			MonthName = "February";
+			if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) {
+				DaysInMonth = 29;
+			} else {
+				DaysInMonth = 28;
+			}
+
+			break;
+
+		case 3:
+			MonthName = "March";
+			DaysInMonth = 31;
+			break;
+		case 4:
+			MonthName = "April";
+			DaysInMonth = 30;
+			break;
+		case 5:
+			MonthName = "May";
+			DaysInMonth = 31;
+			break;
+		case 6:
+			MonthName = "June";
+			DaysInMonth = 30;
+			break;
+
+		case 7:
+			MonthName = "July";
+			DaysInMonth = 31;
+			break;
+
+		case 8:
+			MonthName = "August";
+			DaysInMonth = 31;
+			break;
+		case 9:
+			MonthName = "September";
+			DaysInMonth = 30;
+			break;
+		case 10:
+			MonthName = "October";
+			DaysInMonth = 31;
+			break;
+		case 11:
+			MonthName = "November";
+			DaysInMonth = 30;
+			break;
+		case 12:
+			MonthName = "December";
+			DaysInMonth = 31;
+			break;
+
+
+
+
+
+		}
+		System.out.println(MonthName+" "+year+" " + "has"+" "+DaysInMonth + " "+"Days..!");
+
+	}
+}
+
+
+-----Month and Days-----
+
+import java.util.Scanner;
+public class Clacu 
+{
+public static void main(String[] args) 
+{
+	Scanner scan = new Scanner(System.in);
+	
+	System.out.println("Enter month name:");
+	String month = scan.nextLine();
+	
+	System.out.println("Enter year");
+	int year = scan.nextInt();
+	
+	int MonthNum = 0 ;
+	int MonthDays= 0;
+	
+    switch(month) 
+    {
+    case "January":
+    	MonthNum = 1;
+    	MonthDays =31;
+    	break;
+    case "February":
+    	MonthNum = 2;
+    	if((year%4==0)&&(year%100!=0) || (year%400==0))
+    	MonthDays =29;
+    	else
+    		MonthDays = 28;	
+    	break;
+
+    case "March":
+    	MonthNum = 3;
+    	MonthDays =31;
+    	break;
+
+    case "April":
+    	MonthNum = 1;
+    	MonthDays =30;
+    	break;
+
+    	
+    }
+    System.out.println(MonthNum+" "+year+" "+"has"+MonthDays+"days...!");
+	
+}
+}
+
