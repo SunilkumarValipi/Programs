@@ -1,0 +1,166 @@
+
+----Set Interface DescendingOrder----
+
+import java.awt.List;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class abc {
+public static void main(String[] args) {
+	Set<Integer> list =new TreeSet().descendingSet();
+	
+	list.add(10);
+	list.add(30);
+	list.add(700);
+	list.add(50);
+	list.add(80);
+	list.add(60);
+	list.add(40);
+	list.add(100);
+	System.out.println(list);
+	 
+	Iterator<Integer> iterator = list.iterator();
+	while(iterator.hasNext()) {
+		System.out.println(iterator.next());
+	}
+}
+}
+
+----User Exception-----
+
+class spiderException extends Throwable{
+	spiderException(){
+		super();
+	}
+	spiderException(String msg){
+		super(msg);
+	}
+}
+
+public class Demo{
+	public static void main(String[] args) {
+		int i = 10; int j = 0;
+		if(j==0) {
+			try {
+				throw new spiderException("/ by zero");
+			} catch (spiderException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else {
+				int result = i/j;
+				System.out.println(result);
+			}
+	
+	}
+}
+	
+
+
+-----User Exception passing Argument-----
+
+class myException extends Throwable{
+	myException(String msg){
+		super(msg);
+	}
+	public myException() {
+		super();
+	}
+}
+
+
+public class Demo1{
+	public static void main(String[] args) {
+		
+		try {
+			throw new myException("asdfghjk");
+		} catch (myException e) {
+						System.out.println(e.getMessage());
+						System.out.println("Caugth the Exception");
+
+		}
+		
+	}
+}
+
+-----ArithmeticException-----
+
+package com.techno.Runtime$uncheckedExcep;
+public class AithmaticException {
+	
+	public static void main(String[] args) {
+		int data = 10;
+		int n = 0;
+		String str = null;
+		//System.out.println(str.length());
+		try {
+		//int result = data/n;
+
+			System.out.println(str.length());
+			
+		}catch(ArithmeticException e){
+			System.out.println("solve the exception");
+		}catch(Exception s) {
+			System.out.println("slove");
+		}
+
+	
+}
+}
+
+
+     -----ArrayIndexOutOfBoundsException------
+
+
+package com.techno.Runtime$uncheckedExcep;
+
+public class ArrayIndexOutOfBoundExc {
+     public static void main(String[] args) {
+		
+    	 int[] x = {1,2,3,4,5,6};
+    	 try {
+    	 System.out.println(x[6]);
+	}catch(ArrayIndexOutOfBoundsException s) {
+		System.out.println("Exception solved");
+	}
+    	 System.out.println("welcoome");
+}
+}
+
+----NullPointerException -----
+
+package com.techno.Runtime$uncheckedExcep;
+public class NullPoinnterExc {
+public static void main(String[] args) {
+	
+	String str = null;
+	try {
+    System.out.println(str.length());
+	}catch( NullPointerException | ArithmeticException e) {
+		System.out.println("===========");
+	}
+	System.out.println("Hii");
+}
+}
+
+-----ClassCastException-----
+
+package com.techno.Runtime$uncheckedExcep;
+public class ClassCastExcep {
+public static void main(String[] args) {
+	 Object obj = new Object();
+	 
+	// aad r = new aad();
+	 try {
+	 aad r = (aad) obj;
+	 //int s = (int) obj;
+	 }catch(ClassCastException e) {
+		 System.out.println("asdfghjk");
+	 }
+	 System.out.println("Welcome");
+}
+}
+
+
