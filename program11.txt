@@ -1,0 +1,324 @@
+
+---Method References----
+
+package com.btm.practice;
+interface sandeep{
+	void say();
+}
+public class StaticMethRef{
+	public static void saySomething() {
+		System.out.println("I am static method");
+	}
+
+public static void main(String[] args) 
+{
+	sandeep san = StaticMethRef::saySomething; 
+	san.say();
+}
+}
+
+----For Each Method-----
+
+package org.techno.forEach;
+
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
+public class forEachDemo {
+	public static void main(String[] args) {
+		List<Integer> arrayList=Arrays.asList(1,3,7,8,10,12,17,18,45,99,333);
+		
+		for(int i=0; i<arrayList.size(); i++) {
+			System.out.println(i);
+		}
+		System.out.println("========for each=========");
+		for (Integer integer : arrayList) {
+			System.out.println(integer);
+			
+		}
+		System.out.println("======Iterator======");
+		Iterator<Integer> iterator = arrayList.iterator();
+		while(iterator.hasNext()) {
+			System.out.println(iterator.next());
+		}
+		
+		
+		System.out.println("============for each method=============");
+		arrayList.forEach(System.out::println);
+		
+		
+	}
+
+}
+
+
+
+-----Lambda Expression----
+
+
+package org.techno.LambdaExperssion1;
+
+public interface Test {
+	int add(int x, int y);
+
+}
+
+
+
+package org.techno.LambdaExperssion1;
+
+public class MyClass {
+	public static void main(String[] args) {
+		
+	
+//	Test test=(x,y)->{
+//		//System.out.println(x+y);
+//		return x+y;
+//		
+//	};
+//    int add = test.add(10, 20);
+//    System.out.println(add);
+
+//	}
+	Runnable run=()->{
+		for(int i=1; i<=5; i++) {
+			System.out.println(i);
+		}
+	};
+	Thread thread =  new Thread(run);
+		thread.start();
+	}
+}
+
+
+   
+----LambdaExperssion_1 -----
+
+
+package org.techno.LambdaExpression;
+
+public interface Test {
+	void message();
+
+}
+
+package org.techno.LambdaExpression;
+
+public class Testimpl implements Test{
+
+	@Override
+	public void message() {
+		
+	}
+
+}
+// not use this class
+
+
+package org.techno.LambdaExpression;
+
+public class MyClass {
+	public static void main(String[] args) {
+	Test test = new Test(){
+
+		@Override
+		public void message() {
+			System.out.println("Hello Guys..!");
+			
+		}
+		
+	};
+	test.message();
+	System.out.println("===================");
+	Test test1=()->{
+		System.out.println("hello...!");
+		
+	};
+	test1.message();
+	}
+
+}
+
+
+---Method References----
+
+
+package org.techno.MethodRefference;
+
+public interface Test {
+	int add(int x, int y);
+
+}
+
+
+package org.techno.MethodRefference;
+
+public class MyClass {
+	public  int sum(int x, int y) {
+		return x+y;
+	}
+	public static int sub(int x, int y) {
+		return x-y;
+	}
+
+	public static void main(String[] args) {
+//		MyClass myClass = new MyClass();
+//		Test test = myClass::sum;     // Non-static variables
+//		System.out.println(test.add(10, 20));
+		
+		Test test = MyClass::sub;
+		System.out.println(test.add(10, 20));
+		
+	}
+
+}
+   
+   
+   ------Employee Class Using Stream Api-----
+   
+   
+   package org.techno.StreamApi;
+
+public class Employee {
+	int Employee_id;
+	String employee_Name;
+	double salary;
+	String Designation;
+	int age;
+	public Employee(int employee_id, String employee_Name, double salary, String designation, int age) {
+		super();
+		Employee_id = employee_id;
+		this.employee_Name = employee_Name;
+		this.salary = salary;
+		Designation = designation;
+		this.age = age;
+	}
+	public int getEmployee_id() {
+		return Employee_id;
+	}
+	public void setEmployee_id(int employee_id) {
+		Employee_id = employee_id;
+	}
+	public String getEmployee_Name() {
+		return employee_Name;
+	}
+	public void setEmployee_Name(String employee_Name) {
+		this.employee_Name = employee_Name;
+	}
+	public double getSalary() {
+		return salary;
+	}
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	public String getDesignation() {
+		return Designation;
+	}
+	public void setDesignation(String designation) {
+		Designation = designation;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	@Override
+	public String toString() {
+		return "Employee [Employee_id=" + Employee_id + ", employee_Name=" + employee_Name + ", salary=" + salary
+				+ ", Designation=" + Designation + ", age=" + age + "]";
+	}
+		
+
+}
+
+   --------------Execute part---------------
+
+   
+package org.techno.StreamApi;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class MyClass {
+	public static void main(String[] args) {
+		List<Employee> list = Arrays.asList(new Employee(107,"Vivek",25000,"developer",23),
+		                                         new Employee(103,"Manju",35000,"HR",26),
+		                                         new Employee(102,"Ranjitha",81000,"Architecture",17),
+		                                         new Employee(110,"Hemanth",21000,"developer",22),
+		                                         new Employee(111,"Kratika",45000,"Tester",26),
+		                                         new Employee(101,"Sandeep",17000,"developer",28),
+		                                         new Employee(106,"Yoosodha",70000,"MD",50));
+		Employee e = list.get(1);
+		System.out.println("==============");
+		for(int i=1; i<list.size(); i++) {
+			if(e.getAge()>list.get(i).getAge()) {
+				e=list.get(i);
+			}
+		}
+		System.out.println(e);
+		
+		
+		System.out.println("=========minimum salary===========");
+//		Stream<Employee> stream = list.stream();
+//		 list.stream().min(Comparator.comparing(Employee::getSalary)).ifPresent(System.out::println);
+//		//System.out.println(min);
+//		
+//		System.out.println("==========Highest Age===========");
+//		Optional<Employee> max = list.stream().max(Comparator.comparing(Employee::getAge));//.ifPresent(System.out::println);
+//		System.out.println(max);
+//		System.out.println("============Sorting===========");
+//		
+		List<Employee> collect = list.stream().sorted(Comparator.comparing(Employee::getEmployee_Name)).collect(Collectors.toList());
+		
+		Collections.reverse(collect);
+		
+		collect.forEach(System.out::println);
+		
+		System.out.println("=========================");
+		
+		Map<String, List<Employee>> collect2 = list.stream().collect(Collectors.groupingBy(Employee::getDesignation));
+		collect2.forEach((department,emp)->{
+			System.out.println(department);
+			emp.forEach(System.out::println);  
+		});
+		
+		System.out.println("===========age >20=============");
+		List<Employee> collect3 = list.stream().filter(emp->emp.getAge()>20).collect(Collectors.toList());
+	    collect3.forEach(System.out::println);
+	    
+	    System.out.println("=============salary >30000==============");
+	    
+	    
+    list.stream().filter(emp->emp.getSalary()>30000).collect(Collectors.toList());
+    collect.forEach(System.out::println);
+      //collect3.forEach(System.out::println);
+	    System.out.println("===========================");
+    
+	   boolean b = list.stream().anyMatch(emp->emp.getAge()<14);
+	   System.out.println( b);
+	  // List number = Arrays.asList(2,3,4,5);
+	   //List square = number.stream().map(x->x*x).collect(Collectors.toList());
+	  
+	   List<Integer> t = Arrays.asList(1,2,3,4,5);
+	   List suqare = t.stream().map(x->x*x).collect(Collectors.toList());
+	   suqare.forEach(System.out::println);
+	   
+	   System.out.println("======================");
+//	   List<String> names = Arrays.asList("Sandeep","Sanjay","suresh");
+//	   List s1 = list.stream().filter(x->x.startsWith("s")).collect(Collectors.toList());
+//	   
+//	   
+	}
+
+}
+
+
