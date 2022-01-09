@@ -1,0 +1,115 @@
+
+----Constructor Chainning-----
+
+
+public class ConstactorChainning
+{
+ int a;
+int b;
+ ConstactorChainning(int a)
+ {
+	 this.a=a;
+	 
+ }
+  ConstactorChainning(int a, int b)
+ {
+	 this(a);
+	 this .b=b;
+ }
+  public static void main(String[] args)
+  {
+	  ConstactorChainning cc = new ConstactorChainning(1);
+	  ConstactorChainning cc1 = new ConstactorChainning(2,4);
+	  System.out.println(cc.a);
+	  System.out.println(cc1.a);
+	  System.out.println(cc1.b);
+	  
+	
+}
+}
+
+
+-----Basic Program-----
+
+
+public class First 
+{
+	static int x =10;
+	  int y;
+public static void main(String[] args)
+{
+	First a = new First();
+	First b = new First();
+
+	First c= new First();
+	System.out.println(c.y);
+	a.x=199;
+	System.out.println(a.x);
+	a.x = 198;
+	System.out.println(b.x);
+	System.out.println(c.x);
+	b.y = 100;
+	System.out.println(b.y);
+	System.out.println(c.y);
+	
+}
+}
+
+-----multi-level Inheritence---
+
+class Pen 
+    {
+	public void display() 
+	{
+		System.out.println("Blue color pen");
+	}
+	}
+class Paper extends Pen
+{
+	public void product()
+	{
+		System.out.println("Amazon");
+	}
+}
+
+public class Multilevel
+{
+	public static void main(String[] args) {
+		
+	
+	Paper p = new Paper();
+	p.display();
+	p.product();
+	
+	}
+	}
+
+   ---Using Abstraction----
+
+public class Abstra extends Abstract 
+{
+	void m1()
+	{
+      System.out.println("This is abstract method");
+	}
+	public static void main(String[] args) 
+	{
+		Abstract a = new Abstra();
+		a.m1();
+	}
+	
+
+}
+
+-------------------------
+
+
+abstract public class Abstract 
+{
+	abstract void m1();
+void m2()
+{
+	System.out.println("Non abstract method");
+}
+}
+
