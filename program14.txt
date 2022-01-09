@@ -1,0 +1,134 @@
+
+--Factory Dedsign Factory------
+
+package com.techno.looseCoupling;
+
+public interface Car {
+	abstract void start();
+	abstract void Accelater();
+	abstract void brake();
+
+}
+
+----------------------------
+
+package com.techno.looseCoupling;
+
+public class RollsRoyce implements Car{
+
+	@Override
+	public void start() {
+		System.out.println("aaaaaaaaaaaaaaaaaaaa");
+		
+	}
+
+	@Override
+	public void Accelater() {
+		System.out.println("bbbbbbbbbbbbbbbbbbbbbbb");
+	}
+
+	@Override
+	public void brake() {
+		System.out.println("ccccccccccccccccccccc");
+		
+	}
+
+}
+
+--------------------------------------
+
+package com.techno.looseCoupling;
+
+public class Audi implements Car{
+
+	@Override
+	public void start() {
+		System.out.println("Hiiiii");
+  		
+	}
+
+	@Override
+	public void Accelater() {
+		System.out.println("Helooooo");
+		
+	}
+
+	@Override
+	public void brake() {
+		System.out.println("Bye.......");
+		
+	}
+
+}
+
+----------------------------------
+
+package com.techno.looseCoupling;
+
+public class Tarzan implements Car{
+
+	@Override
+	public void start() {
+		System.out.println("xxxxxxxxxxxxxx");
+	}
+
+	@Override
+	public void Accelater() {
+		System.out.println("yyyyyyyyyyyyyyyyy");
+	}
+
+	@Override
+	public void brake() {
+		System.out.println("zzzzzzzzzzzzzzzzz");
+		
+	}
+
+}
+
+-------------------------------------
+
+package com.techno.looseCoupling;
+
+public class Driver {
+	Car car;
+	public void drive(String s) {
+		if(s.equalsIgnoreCase("Audi")) {
+			car= new  Audi();
+			car.start();
+			car.Accelater();
+			car.brake();
+		}
+		if(s.equalsIgnoreCase("tarzan")) {
+			car = new Tarzan();
+			car.start();
+			car.Accelater();
+			car.brake();
+		}
+		if(s.equalsIgnoreCase("rollsroyce")) {
+			car = new RollsRoyce();
+			car.start();
+			car.Accelater();
+			car.brake();
+		}
+	}
+
+}
+
+
+---------------------------------------
+
+package com.techno.looseCoupling;
+import java.util.Scanner;
+public class Owner {
+public static void main(String[] args) {
+	Scanner scan = new Scanner(System.in);
+	System.out.println(" Boss which car u want?");
+	String s = scan.nextLine();
+	
+	Driver d = new Driver();
+	d.drive(s);
+	
+}
+} 
+
+
