@@ -1,0 +1,62 @@
+
+
+---Logger----
+
+package org.techno.loggerApp;
+
+import java.util.logging.Formatter;
+import java.util.logging.LogRecord;
+
+public class MyFormatter extends Formatter {
+
+	@Override
+	public String format(LogRecord record) {
+		return record.getMessage()+":"+record.getSourceMethodName()+":"+record.getLoggerName()+":"+record.getLevel()+"\n";
+	}
+
+}
+
+
+
+   -------------------
+   
+   
+   package org.techno.loggerApp;
+
+import java.io.IOException;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.FileHandler;
+import java.util.logging.Formatter;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class MyLogger {
+	public static final Logger LOGGER=Logger.getLogger(MyLogger.class.getName());
+    public static void main(String[] args) throws Exception, IOException {
+		
+//    	ConsoleHandler consoleHandler = new ConsoleHandler();
+//		consoleHandler.setLevel(Level.FINEST); /// Change the implementations
+//		
+//		LOGGER.addHandler(consoleHandler);
+//		
+ //   	LOGGER.setLevel(Level.FINE);/// change The implementations
+		FileHandler fileHandler = new FileHandler("C:\\Users\\dell\\Desktop\\FileHandler\\log.log");
+    	MyFormatter myFormatter = new MyFormatter();
+		fileHandler.setFormatter(myFormatter);
+		LOGGER.addHandler(fileHandler);
+		
+		LOGGER.setLevel(Level.FINE);
+		
+		LOGGER.finest("i am finest");
+		LOGGER.finer("i am finer");
+		LOGGER.fine("i am fine");
+		LOGGER.config("i am config");
+		LOGGER.info("i am info");
+		LOGGER.warning("i am Warning");
+		LOGGER.severe("i am severe");
+		
+		
+		
+	}
+}
