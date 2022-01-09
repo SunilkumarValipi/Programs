@@ -1,6 +1,6 @@
 
 
-     Array Implementation
+   Array Implementation
 	 ====================
 
 package com.te.arraylistimpl;
