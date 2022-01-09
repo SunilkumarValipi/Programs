@@ -1,0 +1,61 @@
+
+-----Two thread at a running------------
+
+
+package org.tchno.runnableThread2;
+
+public class Demo1 extends Thread{
+	@Override
+	public void run() {
+		for(int i=0;i<=10;i++) {
+			System.out.println(i);
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+}
+
+
+==============================================
+
+package org.tchno.runnableThread2;
+
+public class Demo2 extends Thread {
+	public void run() {
+		for(int i=11; i<=20;i++) {
+			System.out.println(i);
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+}
+
+
+================================================
+
+package org.tchno.runnableThread2;
+
+public class Main {
+	public static void main(String[] args) {
+		Demo2 demo2 = new Demo2();
+		Demo1 demo1 = new Demo1();
+		
+		demo1.setPriority(2);
+		demo2.setPriority(2);
+		System.out.println("The main thread priority:"+Thread.currentThread().getPriority());
+		demo1.start();
+		
+		demo2.start();
+
+		
+	}
+
+}
