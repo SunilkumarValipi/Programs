@@ -1,0 +1,49 @@
+
+----Single Design Pattern------
+
+package com.techno.singleTon;
+
+public class Whatsapp {
+   static  Whatsapp whatsapp; //(non static variables can't access directly)
+	
+	private Whatsapp(){
+		
+	}
+	
+	static Whatsapp helperMethod() {
+		
+		if(whatsapp == null) {
+			whatsapp = new Whatsapp();
+			return whatsapp;
+		}
+		return whatsapp;
+		
+	}
+
+}
+
+
+====================================
+
+package com.techno.singleTon;
+
+public class User {
+	public static void main(String[] args) {
+		Whatsapp u1 = Whatsapp.helperMethod();
+		System.out.println(u1);
+//	u1.whatsapp = null; (private  static Whatsapp whatsapp;(if u give private key word))
+		Whatsapp u2 = Whatsapp.helperMethod();
+        System.out.println(u2);
+      //  u2.whatsapp = null;
+        Whatsapp u3 = Whatsapp.helperMethod();
+        System.out.println(u3);
+
+//        private Whatsapp(){
+//    		
+//    	}(this private key word is stop to creating the new Objects).
+
+        
+        
+	}
+
+}
