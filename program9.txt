@@ -99,4 +99,29 @@ public static void main(String[] args)
 }
 }
 
+---Single Inheritance----
+class pen
+{
+	void write()
+	{
+		System.out.println("Writng....");
+	}
+}
+class book extends pen
+{
+	void open()
+
+{
+		System.out.println("Story book...!");
+		}
+}
+public class SingleInhe 
+{
+public static void main(String[] args)
+{
+	book p = new book();
+	p.write();
+	p.open();
+}
+}
 
