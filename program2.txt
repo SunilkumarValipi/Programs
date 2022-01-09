@@ -1,0 +1,27 @@
+
+---Basic ArrayList Program-----
+
+package org.techno.arraylistDemo;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+
+public class Employee {
+	public static void main(String[] args) {
+		Collection c = new ArrayList();
+		c.add("Sandeep");
+		c.add(7);
+		c.add(83.2);
+		c.add(true);
+		c.add(null);
+		c.add('a');
+		System.out.println(c);
+		Iterator iterator = c.iterator();
+		while(iterator.hasNext())
+	{
+		System.out.println(iterator.next());
+	}
+
+}
+}
