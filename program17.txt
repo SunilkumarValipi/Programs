@@ -1,0 +1,83 @@
+
+----Leap Year -----
+
+import java.util.Scanner;
+public class LeapYear
+{
+public static void main(String[] args) 
+{
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the monthnumber:");
+	String month = sc.nextLine();
+	System.out.println("Enter the year:");
+	int year = sc.nextInt();
+	
+	
+	/* if(((n%4 == 0)&&(n%100!=0)||(n%400 == 0)))
+		
+	  System.out.println(n+"is a leap year");
+		 else 
+	  System.out.println(n+"is not a leap year"); */
+	
+		 
+	 }
+}
+
+
+----QuadraticEqn ---------
+
+import java.util.Scanner;
+public class QuadraticEqn 
+{
+	static void sqrt(double a, double b, double c) {
+	double d1 = (-b+Math.sqrt(b*b-4*a*c))/2*a;
+	double d2 = (-b-Math.sqrt(b*b-4*a*c))/2*a;
+	System.out.println(d1);
+	System.out.println(d2);
+	}
+	public static void main(String[] args)
+	{
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Enter A value:");
+		double a = scan.nextDouble();
+		System.out.println("Enter B value:");
+		double b = scan.nextDouble();
+		System.out.println("Enter C value:");
+		double c = scan.nextDouble();
+		
+		//double D = b*b-4.0*a*c;
+		//System.out.println(D);
+		sqrt(a,b,c);
+	}
+
+}
+
+
+
+------Unique-------
+
+
+public class Unique
+{
+ static int a = 12;
+  int b;
+  public static void main(String[] args) 
+  {
+	  Unique u = new Unique();
+	  Unique v = new Unique();
+	  
+	  u.a=19;
+	  System.out.println(u.a);
+	 u.a=21;
+	 System.out.println(v.a);
+	 u.b=23;
+	 System.out.println(u.b);
+	 u.b=24;
+	 System.out.println(v.b);
+	
+}
+}
+
+
+
