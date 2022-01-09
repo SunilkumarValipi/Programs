@@ -1,0 +1,179 @@
+
+
+   --- FileNotFoundException----
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+public class Demo {
+	public static void main(String[] args) {
+		try {
+			
+		
+		FileReader file = new FileReader(" C:\\Users\\dell\\Desktop\\FileHandler");
+		}catch(FileNotFoundException e) {
+		System.out.println("File not found");
+		}
+	}
+}
+
+
+    -----Mixed exception Programs-----
+
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
+//Runtime Exception
+public class Demo1 {
+	public static void main(String[] args) throws ArithmeticException {
+//		try {
+//		int data =90/0;
+//		
+//		}
+//		catch(ArithmeticException e) {
+//			System.out.println("rest of the data");
+//		}
+		
+		//System.out.println("ArithmeticException");
+//		int i=50;
+//		int j=0;
+//		int data ;
+//		
+//		try {
+//		data = i/j;
+//		}catch(ArithmeticException e) {
+//			
+//		
+//		System.out.println("Hello..."+i/(j+2));
+//		}
+		
+		
+     //  System.out.println("ArrayIndexOutOfBoundsException");
+//		try {
+//			int[] arr = { 12, 23, 23, 9 };
+//			System.out.println(arr[1]);
+//		} catch (ArrayIndexOutOfBoundsException e) {
+//			System.out.println("Enter remaining code");
+//		}
+		
+		//System.out.println("FileNotFoundException");
+//		  try {
+//		PrintWriter pw = new PrintWriter("aadf.txt");
+//		  }
+//		  catch(FileNotFoundException e) {
+//		System.out.println(e);
+//		  }
+//		  System.out.println("Hello.....Sandeep");
+//	
+//}
+		//System.out.println("Bothe exceptions ata atime");
+		
+		try {
+		int[] x = new int[5];
+		x[5]=20/0;
+		System.out.println(x[5]); // optional to add
+		}catch(ArithmeticException e) {
+		
+		System.out.println("Hello EveryOne");
+		}
+		catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("Hii Friends");
+		}
+		catch(Exception e) {
+			System.out.println("How Are You");
+		}
+		System.out.println("Welcome to the Bangalore");
+			
+		
+		
+//	System.out.println("Exception msg");
+	
+	try {
+	String s = null;
+	System.out.println(s.length());
+	}catch(ArithmeticException e) {
+		System.out.println("Hii");
+	}catch(ArrayIndexOutOfBoundsException e) {
+		System.out.println("Hello");
+	}catch(Exception e) {
+	System.out.println("Welcome");
+	}
+	System.out.println("Good Morning");
+	
+	
+		 try{    
+			    int a[] = new int[5];    
+			    a[5]=30/0;    
+			   }  catch(Exception e) {
+				   System.out.println("Hii");
+	    }
+		 System.out.println("=====");
+	}
+
+}
+
+
+-----ArithmeticException(using user input)-----
+
+import java.util.Scanner;
+public class Test {
+public static void main(String[] args) {
+	int x;
+	int y;
+	Scanner scan = new Scanner(System.in);
+	System.out.println("Enter the number 1");
+	x= scan.nextInt();
+	System.out.println("Enter the number 2");
+	y= scan.nextInt();
+    try {
+	int result = x/y;
+    }catch(ArithmeticException e) {
+    	System.out.println("Impossible to fing a result");
+    }finally {
+    	System.out.println("I am execute if program show exceptions or not, am finall");
+    }
+}
+}
+
+    -----TryWithFinally------
+
+
+public class TryWithFinally {
+		   public static int method() {
+		      try {
+		         System.out.println("Try Block with return type");
+		         return 10;
+		      } finally {
+		         System.out.println("Finally Block always execute");
+		      }
+		   }
+		   public static void main(String[] args) {
+		      System.out.println(method());
+		   }
+		}
+
+
+		----TryWithMultipleCatch-----
+		
+		
+public class TryWithMultipleCatch {
+	public static void main(String args[]) {
+	      try{
+	    	  System.out.println("First print statement in try block");
+	         int a[]=new int[5];
+	        a[3]=10/0;
+	         
+	      } catch(ArithmeticException e) {
+	         System.out.println("Warning: ArithmeticException");
+	      } catch(ArrayIndexOutOfBoundsException e) {
+	         System.out.println("Warning: ArrayIndexOutOfBoundsException");
+	      } catch(Exception e) {
+	         System.out.println("Warning: Some Other exception");
+	      }
+	      System.out.println("Out of try-catch block");
+	   }
+}
+
+
+
+
