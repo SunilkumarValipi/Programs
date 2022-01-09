@@ -1,0 +1,84 @@
+
+
+---Employee Class-----(using Comparable)
+
+package org.tech.Linkedlist;
+
+public class Employee implements Comparable<Employee> {
+	int emp_id;
+	String emp_name;
+	double salary;
+	public Employee(int emp_id, String emp_name, double salary) {
+		super();
+		if(emp_id>0) {
+		this.emp_id = emp_id;
+		}
+		this.emp_name = emp_name;
+		this.salary = salary;
+	}
+	@Override
+	public String toString() {
+		return "Employee [emp_id=" + emp_id + ", emp_name=" + emp_name + ", salary=" + salary + "]";
+	}
+	
+	public int compareTo(Employee o) {
+	double result = o.salary-this.salary;
+	//double result1 = this.salary-o.salary;
+	int sal = (int)result;
+	return sal;
+
+}
+}
+
+----Company class----
+
+package org.tech.Linkedlist;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class Company {
+	public static void main(String[] args) {
+		ArrayList<Employee> arraylist = new ArrayList();
+		Employee employee = new Employee(1, "X",598689);
+		arraylist.add(employee);
+		
+		arraylist.add(new Employee(2,"Y",124578));
+		arraylist.add(new Employee(3,"Z",124578));
+
+		arraylist.add(new Employee(4,"A",124578));
+
+		System.out.println(arraylist.get(2));
+		for(Employee e : arraylist) {
+			System.out.println(e);
+		}
+		System.out.println("---------");
+		Collections.sort(arraylist);
+		for(Employee e:arraylist) {
+			System.out.println(e);
+		
+//			System.out.println("---------");
+//			Collections.sort(arraylist,new Comparator());
+//			for(Employee e:arraylist) {
+//				System.out.println(e);
+		}
+	}
+
+}
+
+----using Comparator-----
+
+
+package org.tech.Linkedlist;
+public class Comparator {
+public class SortBySalary implements Comparator<Employee>{
+
+	@Override
+	public int compare(Employee a, Employee b) {
+		return (int) (a.salary-b.salary);
+	}
+}
+}
+
+
