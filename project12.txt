@@ -1,0 +1,76 @@
+
+
+ ----Junit basic program-----
+ 
+ package com.te.junitDemo;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class Something {
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}
+
+----Junit program-----
+
+public class Calculator {
+	
+	public int add(int num1, int num2) {
+		return num1+num2;
+	}
+	public static int multiplication(int a, int b, int c) {
+		return a*b*c;
+	}
+	public double areaOfCircle(double radius) {
+		return Math.PI*radius*radius;
+		
+	}
+
+}
+
+----------------------------------
+
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+class CalculatorTest {
+
+	@Test
+	@Disabled
+	void add() { // not only add ,u give any name of the method.
+		Calculator cal = new Calculator();
+		cal.add(2, 6);
+		int actual = cal.add(2, 6);
+		int expected=8;
+		assertEquals(expected, actual);
+		//fail("Not yet implemented");
+	}
+	@Test   // if we don't write this ,can't execute this entire method.
+	@DisplayName("Multile")
+	void multiplication() {
+		Calculator cal = new Calculator();
+		int actual = cal.multiplication(2, 3, 4);
+		int expected = 24;
+		assertEquals(expected, actual);
+		
+	}@Test
+	void areaOfCircle() {
+		Calculator cal = new Calculator();
+		double actual = cal.areaOfCircle(10);
+		double expected = 314.159265358979323846;
+		assertEquals(expected, actual);
+	}
+
+
+}
+
