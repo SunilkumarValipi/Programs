@@ -1,0 +1,108 @@
+
+----Basic Programs-----
+
+package com.techno.SetInterface;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
+public class Demo {
+	public static void main(String[] args) {
+		Set<String> set = new LinkedHashSet<String>();
+		set.add("false");
+		set.add("True");
+		set.add("002");
+		set.add("Sunil");
+		set.add("Arjun");
+		set.add("false");
+		set.add("009");
+		set.add("true");
+		System.out.println(set);
+		for(String s : set) {
+			System.out.println(s);
+		}
+		
+	}
+
+}
+
+======================================
+
+
+package com.techno.SetInterface;
+
+import java.util.Collections;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class Demo1 {
+public static void main(String[] args) {
+	Set<Integer> set = new TreeSet().descendingSet();
+	set.add(15);
+	set.add(10);
+	set.add(22);
+	set.add(56);
+	set.add(1);
+//	set.add("Arjun");
+//	set.add("false");
+//	set.add("009");
+//	set.add("arue");
+	System.out.println(set);
+}
+===================================
+
+// ListIterator bassed pronting
+package com.techno.SetInterface;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
+
+public class Demo2 {
+	public static void main(String[] args) {
+		List<String> list = new ArrayList<String>();
+		list.add("Sandeep");
+		list.add("Arjun");
+		list.add("Honey");
+		list.add("Smile");
+		list.add("IceCream");
+		list.add("Priya");
+		System.out.println(list);
+		
+		ListIterator<String> listIter = list.listIterator(list.size());        
+		while(listIter.hasPrevious()) {
+        	//String name = listIter.previous();
+        	System.out.println(listIter.previous());
+       }
+}
+}
+
+
+=====================================
+
+//Using HashSet
+package com.techno.SetInterface;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class SetDemo {
+	public static void main(String[] args) {
+		Set<String> set = new LinkedHashSet<String>();
+		set.add("Sandeep");
+		set.add("True");
+		set.add("007");
+		set.add("Null");
+		set.add("False");
+		set.add("Sandeep");
+		
+		System.out.println(set);
+		
+		for(String w:set) {
+			System.out.println(w);
+		}
+		
+	
+	}
+
+}
+
