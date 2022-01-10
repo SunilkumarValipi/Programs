@@ -1,0 +1,143 @@
+
+---Test Case Using Collections------
+
+package com.techno.CaseStudyApp;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class MultiPlayer {
+	public static void main(String[] args) {
+		ArrayList<String> array = new ArrayList<String>();
+		array.add("Happy Song");
+		array.add("Sad Song");
+		array.add("Feeling Song");
+		array.add("Angry Song");
+		array.add("Smile Song");
+		array.add("Melody Song");
+		array.add("Rock Song");
+		home(array);
+		
+	}
+
+	private static void home(ArrayList<String> array) {
+	Scanner scan = new Scanner(System.in);
+	System.out.println("Select the option");
+	System.out.println("1 play song");
+	System.out.println("2 search song");
+	System.out.println("3 add/delete song");
+	int n = scan.nextInt();
+	
+	if(n==1) {
+		playsong(array);
+	}else if(n==2){
+		searchsong(array);
+	}else if(n==3) {
+		addsong(array);
+	}
+		
+	}
+
+	private static void addsong(ArrayList<String> array) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Select option");
+		System.out.println("1 : addSong");
+		System.out.println("2 : deleteSong");
+		System.out.println("3 : Home");
+		int n = scan.nextInt();
+		if(n==1) {
+			songadd(array);
+		}else if(n==2) {
+			sondDelete(array);
+		}else if(n==3) {
+			home(array);
+		}
+	}
+
+	private static void sondDelete(ArrayList<String> array) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the delete the song:");
+		String str = scan.nextLine();
+		if(array.remove(str)) {
+			System.out.println(str + "song is deleted");
+		}else {
+			System.out.println("song is not present in u r music list");
+		}
+		int n = scan.nextInt();
+		if(n==3) {
+			home(array);
+		}
+	}
+
+	private static void songadd(ArrayList<String> array) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the adding song:");
+		System.out.println(" ");
+		String str = scan .nextLine();
+		if(array.contains(str)) {
+			System.out.println(str+"song is already present");
+		}else {
+			array.add(str);
+			System.out.println(str+"Song is added succesfully");
+		}
+		int n = scan.nextInt();
+		if(n==3)
+		home(array);
+	}
+
+	private static void searchsong(ArrayList<String> array) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("This is u r searching place");
+		System.out.println("============================");
+		System.out.println("Available Songs List");
+		System.out.println("============================");
+		//System.out.println(array);
+		for(String s : array) {
+			System.out.println(s);
+		}
+		System.out.println("==========================");
+		System.out.println("which song u want search");
+		System.out.println("=========================");
+		
+	     String str = scan.nextLine();
+		if(array.contains(str))
+		{
+			System.out.println( str+" is playing");
+		}
+		else {
+			System.out.println("Song is not present (OR) user enter input spelling mistake");
+		}
+		int n = scan.nextInt();
+		if(n == 9) {
+			home(array);
+		}
+			
+		}
+		
+	
+
+	private static void playsong(ArrayList<String> array) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Select option");
+		for(int i = 0; i<array.size(); i++) {
+			System.out.println((i+1)+" "+array.get(i));
+			
+		}
+		System.out.println((array.size()+1)+" Random Play");
+		System.out.println((array.size()+2)+" home");
+		System.out.println("Which song u want select the number");
+		int n = scan.nextInt();
+		if(n<=array.size()&&n!=0)
+			System.out.println(array.get(n-1)+" is playing");
+		else if(n==array.size()+1) {
+			System.out.println("Random song is playing");
+		}
+		int n1 = scan.nextInt();
+		if(n1==9) {
+			home(array);
+	}
+		
+		
+	}
+
+}
