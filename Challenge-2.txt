@@ -1,0 +1,33 @@
+
+------Challenge2------
+
+
+package com.techno.Assignments;
+
+public class Challenge2 {
+		public static double area(double x) {
+			double result = 0;
+			if (x <= 0) {
+				result = -1;
+			} else {
+				result = Math.PI * x * x;
+			}
+			return result;
+		}
+
+		public static double area(double x, double y) {
+			double result = 0;
+			if (x <= 0 || y <= 0) {
+				result = -1;
+			} else {
+				result = x * y;
+			}
+			return result;
+		}
+
+		public static void main(String[] args) {
+			System.out.println(Challenge2.area(2, 3));
+
+		}
+
+	}
